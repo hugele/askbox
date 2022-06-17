@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Askbox</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+  <div class="heading">
+  <%=link_to "ASK BOX", root_path,class:"title"%>
+ </div>
+ <div class="navbar">
+    <div class="nav-lists">
+      <%= link_to "質問を投稿しよう", new_ask_path,class:"nav-lists_lists"%>
+     <% if user_signed_in? %>
+      <%# <%= link_to current_user.name + "さん", user_path(current_user.id),class:"nav-lists_lists"%> 
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-lists_lists"%>
+     <% else %>
+      <%= link_to "ログイン", new_user_session_path, class: "post", class:"nav-lists_lists" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "post", class:"nav-lists_lists" %>
+     <% end %>
+     </div>
+  </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>

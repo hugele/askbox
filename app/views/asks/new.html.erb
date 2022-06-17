@@ -1,0 +1,9 @@
+<div class="contents row">
+<div class="container">
+ <h3>質問する</h3>
+<%= form_with model: Ask.new, local: true do |f|%>
+<p><%= f.text_field :title,placeholder: "タイトル 20文字以内",size:"10x10" %></p>
+<p><%= f.text_area :text ,placeholder: "質問内容",size:"10x10"%></p>
+<p><%= f.submit "送信"%>
+</div>
+<%end%>

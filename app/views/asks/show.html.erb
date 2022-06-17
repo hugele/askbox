@@ -1,0 +1,37 @@
+<div class="contents row">
+<div class="container">
+<%= form_with model:@ask, local: true do |f|%>
+<div class="form">
+<%#<%= @ask.title%>
+</div>
+<h3>質問内容</h3>
+<div class="form_area">
+<p class="left-text">
+<%= @ask.text%></p>
+</div>
+<% if user_signed_in? && current_user.id == @ask.user_id %>
+<%= link_to '編集', edit_ask_path(@ask.id), method: :get %>
+ <%= link_to '削除', "/asks/#{@ask.id}", method: :delete%>
+<%end%>
+
+<h3>コメント一覧</h3>
+ <% @comments.each do |comment| %>
+<div class="form_area">
+<div class="left-text">
+・<%= comment.text %>
+<div class="user-name-comment">
+<%= link_to "回答者 "+comment.user.name+"さん", "/users/#{comment.user_id}",class:"show-user"%>
+</div>
+</div>
+</div>
+<%end%>
+<%end%>
+
+ <% if user_signed_in?&& current_user.id == @ask.user_id %>
+   <%= form_with(model: [@ask, @comment], local: true) do |form| %>
+   <%= form.text_area :text, placeholder: "コメントする", rows: "10" %>
+   <%= form.submit "SEND" %>
+   <%end%>
+  <%else%>
+     <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+<%end%>

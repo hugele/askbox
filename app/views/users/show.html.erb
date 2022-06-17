@@ -1,0 +1,9 @@
+<div class="main-index">
+ <div class="index-name">
+<% @asks.each do |ask| %>
+<p>タイトル</p>
+ </div>
+<%= link_to ask.title ,ask_path(ask.id)%>
+ <%end%>
+ </div>
+</div>

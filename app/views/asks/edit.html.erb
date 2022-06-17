@@ -1,0 +1,7 @@
+<div class="contents row">
+<div class="container">
+<%= form_with(model: @ask, local: true) do |form| %>
+<p><%= form.text_field :title,placeholder: "タイトル 20文字以内",size:"10x10" %></p>
+<p><%= form.text_area :text ,placeholder: "質問内容",size:"10x10"%></p>
+<%= form.submit "SEND" %>
+<%end%>

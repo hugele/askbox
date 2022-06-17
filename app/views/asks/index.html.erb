@@ -1,0 +1,15 @@
+  <%# <%= link_to "質問を投稿しよう", new_ask_path%> 
+<div class="main-index">
+  <div class="index-name">
+    <% if user_signed_in? %>
+    <%=  link_to "こんにちは "+current_user.name + "さん", user_path(current_user.id),class:"user"%>
+    <%end%>
+ </div>
+   <div class="index-title">
+   質問一覧
+   <% @ask.each do |ask|%> 
+   <p><%=link_to ask.title ,ask_path(ask.id),class:"titles"%>
+   <%= link_to "#{ask.user.name} さん", ask.user %></p>
+   <%end%>
+  </div>
+</div>
