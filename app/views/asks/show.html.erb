@@ -5,35 +5,38 @@
 <div class="form">
 <p><%= @ask.title%></p>
 </div>
-<div class="form_area">
+<div class="form_area_show">
 <p class="left-text">
 <%= @ask.text%></p>
 </div>
 <div class="edit-content">
 <% if user_signed_in? && current_user.id == @ask.user_id %>
 <%= link_to '編集', edit_ask_path(@ask.id), class:"edit",method: :get %>
- <%= link_to '削除', "/asks/#{@ask.id}", method: :delete%>
+ <%# <%= link_to '削除', "/asks/#{@ask.id}", method: :delete%> 
 <%end%>
 </div>
 
-<h2>コメント一覧</h2>
- <% @comments.each do |comment| %>
-<div class="form_area">
-<div class="left-text">
-・<%= comment.text %>
-<div class="user-name-comment">
-<%= link_to "回答者 "+comment.user.name+"さん", "/users/#{comment.user_id}",class:"show-user"%>
-</div>
-</div>
-</div>
+
+  <h2>回答</h2>
+  <% @comments.each do |comment| %>
+  <div class="form_area">
+   <div class="left-text">
+  ・<%= comment.text %>
+   <div class="user-name-comment">
+   <%= link_to "回答者 "+comment.user.name+"さん", "/users/#{comment.user_id}",class:"show-user"%>
+  </div>
+  </div>
+ </div>
 <%end%>
 <%end%>
 
+<div class="commentform">
  <% if user_signed_in? %>
    <%= form_with(model: [@ask, @comment], local: true) do |form| %>
-   <%= form.text_area :text, placeholder: "コメントする", rows: "10" %>
+   <%= form.text_area :text, placeholder: "回答する", rows: "5" %>
    <%= form.submit "SEND" %>
    <%end%>
   <%else%>
      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
 <%end%>
+</div>

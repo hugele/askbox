@@ -253,6 +253,7 @@ h3 {
   display: flex;
   justify-content: center;
   // margin-bottom: 5px;
+  margin-bottom: 18px;
 }
 .search-index {
   text-align: center;
@@ -280,4 +281,14 @@ h2 {
 .delreason {
   display: flex;
   justify-content: center;
+}
+
+.commentform {
+  margin-top: 60px;
+}
+.form_area_show {
+  margin: 15px 0 15px;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px dashed;
 }
