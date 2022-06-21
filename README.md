@@ -35,6 +35,7 @@ passward: wsxzaq1
 # Basic 認証
 
 ユーザー名: admin
+
 password: 2222
 
 # 利用方法
