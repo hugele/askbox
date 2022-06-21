@@ -21,11 +21,15 @@ https://ask-box-app.herokuapp.com/
 # テスト用アカウント
 
 投稿者ユーザー名: test_user
+
 email: test@user
+
 passward: 1qazxsw
 
 回答者ユーザー名：user_test
+
 email:user@email
+
 passward: wsxzaq1
 
 # Basic 認証
