@@ -75,10 +75,11 @@ header {
 .index-title {
   display: block;
   text-align: center;
+  // border-bottom: 0.5px black solid;
 }
 .index-title p {
   padding: 10px;
-  border-bottom: 0.5px black solid;
+  // border-bottom: 0.5px black solid;
 }
 .user {
   font-size: 25px;
@@ -90,6 +91,7 @@ header {
   font-size: 20px;
   text-decoration: none;
   color: black;
+  padding-top: 15px;
 }
 // show
 
@@ -143,7 +145,7 @@ form textarea {
 .form_area {
   // width: 100%;
   // height: 150px;
-  // margin: 5px 0 15px;
+  margin: 15px 0 15px;
   padding: 10px;
   // border: 1px solid #d8d8d8;
   text-align: center;
@@ -173,6 +175,7 @@ form textarea {
   text-decoration: none;
   color: black;
   font-style: sans-serif;
+  padding-top: 5px;
 }
 
 h3 {
@@ -197,6 +200,21 @@ h4 {
 .user-name-comment {
   text-align: center;
 }
+
+.contact-form {
+  width: 600px;
+}
+h3 {
+  font-size: 25px;
+}
+
+.show-title {
+  font-size: 25px;
+}
+
+.form p {
+  font-size: 20px;
+}
 // .name {
 //   height: 30px;
 //   margin: 20px 0;
@@ -207,3 +225,59 @@ h4 {
 //   box-sizing: border-box;
 //   border: 1px solid #d8d8d8;
 // }
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.submit-searcd {
+  margin-left: 3px;
+  width: 45px;
+  // height: 45px;
+}
+.text-searcd {
+  height: 20px;
+}
+
+.edit {
+  font-size: 15px;
+  // text-decoration: none;
+  // border-radius: 5px;
+  // padding: 10px 10px;
+  // color: #fff;
+  // background: #0bd;
+}
+.edit-content {
+  display: flex;
+  justify-content: center;
+  // margin-bottom: 5px;
+}
+.search-index {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+h2 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.delete {
+  display: block;
+}
+.delname {
+  display: flex;
+  justify-content: center;
+}
+.delmessage {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.delreason {
+  display: flex;
+  justify-content: center;
+}

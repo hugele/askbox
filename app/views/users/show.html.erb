@@ -1,9 +1,15 @@
 <div class="main-index">
  <div class="index-name">
+ <h3>タイトル</h3>
 <% @asks.each do |ask| %>
-<p>タイトル</p>
  </div>
-<%= link_to ask.title ,ask_path(ask.id)%>
+
+
+<div class="index-title">
+<p>・<%= link_to ask.title ,ask_path(ask.id),class:"titles"%></p>
+<% if user_signed_in? && current_user.id == ask.user_id  %>
+ <%= link_to "削除依頼", deletes_path%>
  <%end%>
+<%end%>
  </div>
 </div>

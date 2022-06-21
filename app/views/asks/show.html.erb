@@ -1,20 +1,22 @@
 <div class="contents row">
 <div class="container">
 <%= form_with model:@ask, local: true do |f|%>
+
 <div class="form">
-<%#<%= @ask.title%>
+<p><%= @ask.title%></p>
 </div>
-<h3>質問内容</h3>
 <div class="form_area">
 <p class="left-text">
 <%= @ask.text%></p>
 </div>
+<div class="edit-content">
 <% if user_signed_in? && current_user.id == @ask.user_id %>
-<%= link_to '編集', edit_ask_path(@ask.id), method: :get %>
+<%= link_to '編集', edit_ask_path(@ask.id), class:"edit",method: :get %>
  <%= link_to '削除', "/asks/#{@ask.id}", method: :delete%>
 <%end%>
+</div>
 
-<h3>コメント一覧</h3>
+<h2>コメント一覧</h2>
  <% @comments.each do |comment| %>
 <div class="form_area">
 <div class="left-text">
@@ -27,7 +29,7 @@
 <%end%>
 <%end%>
 
- <% if user_signed_in?&& current_user.id == @ask.user_id %>
+ <% if user_signed_in? %>
    <%= form_with(model: [@ask, @comment], local: true) do |form| %>
    <%= form.text_area :text, placeholder: "コメントする", rows: "10" %>
    <%= form.submit "SEND" %>

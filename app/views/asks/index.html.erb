@@ -1,4 +1,7 @@
-  <%# <%= link_to "質問を投稿しよう", new_ask_path%> 
+  <%= form_with url: search_asks_path, method: :get, class:"search",local: true do |f| %>
+       <p> <%= f.text_field :keyword,class:"text-searcd" %></p>
+       <p> <%= f.submit "検索" , class:"submit-searcd"%></p>
+      <% end %>
 <div class="main-index">
   <div class="index-name">
     <% if user_signed_in? %>
@@ -8,7 +11,7 @@
    <div class="index-title">
    質問一覧
    <% @ask.each do |ask|%> 
-   <p><%=link_to ask.title ,ask_path(ask.id),class:"titles"%>
+  <p>・<%=link_to ask.title ,ask_path(ask.id),class:"titles"%>
    <%= link_to "#{ask.user.name} さん", ask.user %></p>
    <%end%>
   </div>

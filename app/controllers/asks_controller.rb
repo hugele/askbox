@@ -45,8 +45,11 @@ class AsksController < ApplicationController
          render action: :edit
        end
   end
-
   
+  def search
+    @asks = Ask.search(params[:keyword])
+  end
+
   private
 
 
@@ -54,13 +57,4 @@ class AsksController < ApplicationController
     params.require(:ask).permit(:title, :text).merge(user_id: current_user.id)
   end
 
-
-  # def set_item
-  #   @ask= Ask.find(params[:id])
-  # end
-  # def move_to_index
-  #   unless user_signed_in?
-  #   redirect_to action: :index
-  #   end
-  # end
 end
