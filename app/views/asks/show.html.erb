@@ -11,8 +11,8 @@
 </div>
 <div class="edit-content">
 <% if user_signed_in? && current_user.id == @ask.user_id %>
-<%= link_to '編集', edit_ask_path(@ask.id), class:"edit",method: :get %>
- <%# <%= link_to '削除', "/asks/#{@ask.id}", method: :delete%> 
+<p><%= link_to '編集', edit_ask_path(@ask.id), class:"edit",method: :get %></p>
+<p> <%= link_to '削除', "/asks/#{@ask.id}", method: :delete %></p>
 <%end%>
 </div>
 
@@ -24,6 +24,7 @@
   ・<%= comment.text %>
    <div class="user-name-comment">
    <%= link_to "回答者 "+comment.user.name+"さん", "/users/#{comment.user_id}",class:"show-user"%>
+   <%# <%= link_to "削除","/comment/#{@comment.id}", method: :delete%> 
   </div>
   </div>
  </div>

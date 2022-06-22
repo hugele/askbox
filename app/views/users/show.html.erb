@@ -7,9 +7,9 @@
 
 <div class="index-title">
 <p>・<%= link_to ask.title ,ask_path(ask.id),class:"titles"%></p>
-<% if user_signed_in? && current_user.id == ask.user_id  %>
- <%= link_to "削除依頼", deletes_path%>
- <%end%>
+<%# <% if user_signed_in? && current_user.id == ask.user_id  %> 
+ <%# <%= link_to "削除依頼", deletes_path%> 
+ <%# <%end%> 
 <%end%>
  </div>
 </div>

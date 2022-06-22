@@ -1,0 +1,6 @@
+
+<%= form_with(model: @comment, local: true) do |form| %>
+
+<p><%= form.text_area :text ,placeholder: "質問内容",size:"10x10"%></p>
+ <%= form.submit "SEND" %>
+<%end%>
