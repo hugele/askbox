@@ -103,6 +103,16 @@ has_many :comments
 belongs_to :user
 belongs_to :aks
 
+# アプリケーションの挙動
+
+トップページの質問タイトルをクリックすると、内容と回答が表示されます。
+
+[![Image from Gyazo](https://i.gyazo.com/c6eb75372558221395a1393d7d70d419.gif)](https://gyazo.com/c6eb75372558221395a1393d7d70d419)
+
+検索機能を実装したことで、問題に直面した際にデータとして調べらることができます。
+
+[![Image from Gyazo](https://i.gyazo.com/fa2532a9b5d8d4615e22d0a3e8f1d3d3.gif)](https://gyazo.com/fa2532a9b5d8d4615e22d0a3e8f1d3d3)
+
 # 開発環境
 
 Ruby/Ruby on Rails/MySQL/Github/Visual Studio Code
